@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Sanjivani College Of Engineering, Kopargaon</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Our College</h2>
+        <p>Your path to excellence begins here</p>
+        <button onclick="alert('Explore more!')">Explore More</button>
+    </section>
+
+    <section id="about" class="info-section">
+        <h2>About Us</h2>
+        <p>We provide high-quality education with a wide range of courses and opportunities.</p>
+    </section>
+
+    <section id="departments" class="info-section">
+        <h2>Departments</h2>
+        <ul>
+            <li>Computer Science</li>
+            <li>Mechanical Engineering</li>
+            <li>Civil Engineering</li>
+            <li>Electronics</li>
+        </ul>
+    </section>
+
+    <section id="courses" class="info-section">
+        <h2>Courses Offered</h2>
+        <div class="course-list">
+            <div class="course-card">
+                <h3>Computer Science</h3>
+                <p>Learn programming, algorithms, and systems development.</p>
+            </div>
+            <div class="course-card">
+                <h3>Mechanical Engineering</h3>
+                <p>Study mechanical systems, thermodynamics, and material science.</p>
+            </div>
+            <div class="course-card">
+                <h3>Civil Engineering</h3>
+                <p>Focus on construction, infrastructure, and environmental design.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="info-section">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 College Name. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

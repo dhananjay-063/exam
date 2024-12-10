@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="public/angular.min.js"></script>
+    <script src="public/app.js"></script>
+    <script src="public/jquery-3.3.1.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <style>
+        .header {
+            background: #673AB7;
+            color: white;
+        }
+
+        .scale05 {
+            transform: scale(0.5)
+        }
+    </style>
+</head>
+
+<body ng-controller="todolist_controller as todolist">
+    <div class="container">
+        <div class="col-md-5">
+            <div class="col-md-12">
+                <h1 class="display-4 p-2 header">TODO List
+                    <span class="badge badge-light scale05">{{todolist.mylist.length}}</span>
+                </h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li ng-repeat="x in todolist.mylist track by $index" class="list-group-item">
+                        {{x}}
+                        <span ng-click="todolist.removeItem($index)" class="close">&times;</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <form ng-submit="todolist.addToList()" name="todoForm">
+                    <div class="input-group">
+                        <input type="text" required placeholder="Enter The item" class="form-control" ng-model="todolist.new_item">
+                        <div class="input-group-append">
+                            <input type="submit" value="Add" class="btn btn-success">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

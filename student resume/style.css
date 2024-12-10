@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+#about p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.skill-bars {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.skill {
+    width: 20%;
+}
+
+.bar {
+    background-color: #ddd;
+    border-radius: 25px;
+    height: 20px;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.html {
+    width: 90%;
+    background-color: #e34c26;
+}
+
+.css {
+    width: 85%;
+    background-color: #264de4;
+}
+
+.javascript {
+    width: 75%;
+    background-color: #f0db4f;
+}
+
+.react {
+    width: 70%;
+    background-color: #61dafb;
+}
+
+.timeline {
+    margin-bottom: 40px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #007bff;
+    padding-left: 20px;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-card {
+    width: 45%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 2px 0;
+    /* background-color: #007bff; */
+    color: rgb(20, 149, 235);
+}

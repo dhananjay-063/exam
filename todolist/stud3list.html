@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="marksApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Marks Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    form div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    form div input, form div select, form button {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    input, select {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      text-align: left;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    table th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .action-button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .action-button:hover {
+      background-color: #c82333;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MarksController">
+  <div class="container">
+    <h1>Student Marks Entry</h1>
+    <form ng-submit="addStudent()">
+      <div>
+        <input type="text" placeholder="Student Name" ng-model="newStudent.name" required>
+        <input type="number" placeholder="Roll Number" ng-model="newStudent.roll" required>
+      </div>
+      <div>
+        <select ng-model="newStudent.subject" ng-options="subject for subject in subjects" required>
+          <option value="">Select Subject</option>
+        </select>
+      </div>
+      <div>
+        <input type="number" placeholder="CIA Marks" ng-model="newStudent.ciaMarks" required>
+        <input type="number" placeholder="End-Sem Marks" ng-model="newStudent.endSemMarks" required>
+      </div>
+      <div>
+        <input type="number" placeholder="Total Marks" ng-model="newStudent.totalMarks" readonly value="{{ newStudent.ciaMarks + newStudent.endSemMarks }}">
+      </div>
+      <button type="submit">Add Student</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Roll Number</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>CIA Marks</th>
+          <th>End-Sem Marks</th>
+          <th>Total Marks</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="student in students">
+          <td>{{ student.roll }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.subject }}</td>
+          <td>{{ student.ciaMarks }}</td>
+          <td>{{ student.endSemMarks }}</td>
+          <td>{{ student.totalMarks }}</td>
+          <td>
+            <button class="action-button" ng-click="removeStudent($index)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    var app = angular.module('marksApp', []);
+
+    app.controller('MarksController', function ($scope) {
+      $scope.subjects = ['Math', 'Science', 'English', 'History', 'Computer Science']; // List of subjects
+      $scope.students = []; // Array to store student data
+
+      $scope.newStudent = {
+        name: '',
+        roll: '',
+        subject: '',
+        ciaMarks: '',
+        endSemMarks: '',
+        totalMarks: ''
+      };
+
+      // Add a new student
+      $scope.addStudent = function () {
+        if ($scope.newStudent.name && $scope.newStudent.roll && $scope.newStudent.subject && $scope.newStudent.ciaMarks && $scope.newStudent.endSemMarks) {
+          $scope.newStudent.totalMarks = parseInt($scope.newStudent.ciaMarks) + parseInt($scope.newStudent.endSemMarks);
+          $scope.students.push({ ...$scope.newStudent }); // Add to students array
+          $scope.newStudent = { name: '', roll: '', subject: '', ciaMarks: '', endSemMarks: '', totalMarks: '' }; // Clear form
+        }
+      };
+
+      // Remove a student
+      $scope.removeStudent = function (index) {
+        $scope.students.splice(index, 1);
+      };
+    });
+  </script>
+</body>
+</html>

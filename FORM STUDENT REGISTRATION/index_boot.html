@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Registration Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="uname"><b>Enter Your Name:</b></label>
+                <input type="text" class="form-control" placeholder="Enter Your name" name="uname" id="uname">
+            </div>
+            <div class="form-group">
+                <label for="pass"><b>Enter a Password:</b></label>
+                <input type="password" class="form-control" placeholder="Enter a password" name="pass" id="pass">
+            </div>
+            <div class="form-group">
+                <label for="email"><b>Enter Your Email:</b></label>
+                <input type="email" class="form-control" placeholder="Enter Your email" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="dob"><b>Enter Your DOB:</b></label>
+                <input type="date" class="form-control" placeholder="Enter Your Date of Birth" name="dob" id="dob">
+            </div>
+            <div class="form-group">
+                <label for="age"><b>Enter Your Age:</b></label>
+                <input type="number" class="form-control" placeholder="Enter Your age" name="age" id="age" min="15" max="25">
+            </div>
+            <div class="form-group">
+                <label><b>Select Your Gender:</b></label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" value="male" id="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" value="female" id="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" value="other" id="other">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Enter Your Address:</label>
+                <textarea class="form-control" name="address" placeholder="Enter Your address" id="address" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Courses:</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="course" value="html" id="html">
+                    <label class="form-check-label" for="html">HTML</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="course" value="css" id="css">
+                    <label class="form-check-label" for="css">CSS</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="course" value="Java" id="java">
+                    <label class="form-check-label" for="java">JAVA</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="course" value="Python" id="python">
+                    <label class="form-check-label" for="python">Python</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="course" value="React" id="react">
+                    <label class="form-check-label" for="react">React</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch:</label>
+                <select class="form-control" name="branch" id="branch">
+                    <option value="computer">Computer</option>
+                    <option value="IT">IT</option>
+                    <option value="mechanical">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="ECE">ECE</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pic"><b>Select picture:</b></label>
+                <input type="file" class="form-control-file" name="pic" id="pic">
+            </div>
+            <div class="bt_box text-center">
+                <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="script_wt.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

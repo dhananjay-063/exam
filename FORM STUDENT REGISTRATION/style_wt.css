@@ -1,0 +1,107 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Styling for form labels */
+.form_ele label {
+    font-weight: bold;
+}
+
+/* Form container styling */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background-color:rgb(120, 201, 233);
+    padding: 20px;
+    border: 1px solid rgb(160, 187, 220);
+    border-radius: 10px;
+}
+
+/* Form element styling */
+.form_ele {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Input and textarea styling */
+.form_ele input,
+textarea {
+    padding: 5px;
+    border: 1px solid rgb(136, 188, 231);
+    border-radius: 5px;
+}
+
+/* Title Styling */
+h2 {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: rgb(131, 207, 230);
+    padding: 10px;
+    font-style: italic;
+    border: 1px solid rgb(106, 177, 210);
+}
+
+/* Button Container Styling */
+.bt_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+/* Button Styling */
+.bt_box button {
+    padding: 10px;
+    cursor: pointer;
+    width: 150px;
+    border: none;
+    background-color: rgb(71, 132, 161);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.bt_box button:hover {
+    background-color: rgb(78, 185, 238);
+}
+
+/* Input Field Styling */
+[type="text"],[type="date"],[type="email"],[type="password"],[type="number"],[type="file"],
+
+select {
+    width: 200px;
+    border: 1px solid rgb(78, 171, 210);
+}
+
+/* Add responsive styling */
+@media (max-width: 500px) {
+    form, h2 {
+        width: 100%;
+    }
+
+    .form_ele {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form_ele input, textarea, select {
+        width: 100%;
+    }
+
+    .bt_box button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
